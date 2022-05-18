@@ -48,6 +48,18 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# A modern CSS framework based on Flexbox - add by Ben R
+gem 'bulma-rails', '~> 0.9.3'
+
+# Make forms easily - added by Ben R
+gem 'simple_form', '~> 5.1'
+
+# A configurable and documented Rails view helper for adding gravatars into your Rails application. - Ben R
+gem 'gravatar_image_tag', '~> 1.2'
+
+# user authentication - Ben R
+gem 'devise', '~> 4.8', '>= 4.8.1'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -62,6 +74,15 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # provide better error pages - Added by Ben R
+  gem 'better_errors', '~> 2.9', '>= 2.9.1'
+
+  # a command line tool to easily handle events on file system modifications - Added by Ben R
+  gem 'guard', '~> 2.18'
+
+  # automatically reloads your browser when 'view' files are modified. - Added by Ben R
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
 end
 
 group :test do
@@ -70,3 +91,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+
