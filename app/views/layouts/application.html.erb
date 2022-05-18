@@ -41,11 +41,15 @@
       <%# new_bark_path corresponds to the URI for new barks - see Rails Routes in console %>
       <div id='navbarExample' class='navbar-menu'>
         <div class='navbar-end'>
-          <div class='field is-grouped'>
-            <p class='control'>
-              <%= link_to 'New Bark', new_bark_path, class: 'button is-info is-inverted' %>
-            </p>
-            <p class='control'>Sign Up</p>
+          <div class="navbar-item">          
+            <div class='field is-grouped'>
+              <p class='control'>
+                <%= link_to 'New Bark', new_bark_path, class: 'button is-info is-inverted' %>
+              </p>
+              <p class='control'>
+                <%= link_to 'Sign up', '#', class: 'button is-info' %>
+              </p>
+            </div>
           </div>
         </div>
       </div>

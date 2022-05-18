@@ -26,7 +26,7 @@ class BarksController < ApplicationController
 
     respond_to do |format|
       if @bark.save
-        format.html { redirect_to bark_url(@bark), notice: "Bark was successfully created." }
+        format.html { redirect_to root_path, notice: "Bark was successfully created." }
         format.json { render :show, status: :created, location: @bark }
       else
         format.html { render :new, status: :unprocessable_entity }
