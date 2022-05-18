@@ -3,7 +3,7 @@ class BarksController < ApplicationController
 
   # GET /barks or /barks.json
   def index
-    @barks = Bark.all
+    @barks = Bark.all.order('created_at DESC')
   end
 
   # GET /barks/1 or /barks/1.json
