@@ -31,3 +31,8 @@
  .notification:not(:last-child) {
    margin-bottom: 0;
  }
+
+ input[type='checkbox'] {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+}

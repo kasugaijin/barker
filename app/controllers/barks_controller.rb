@@ -1,5 +1,6 @@
 class BarksController < ApplicationController
   before_action :set_bark, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /barks or /barks.json
   def index
