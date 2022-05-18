@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <%# these flash hashes are added per the Devise install recommendation %>
     <% if flash[:notice] %>
       <div class="notification is-primary global-notification">      
         <p class="notice"><%= notice %></p> 
@@ -19,7 +20,35 @@
 
     <% if flash[:alert] %>
       <div class='notification is-danger global-notification'>
-        <p class='alert'><%= alert %>
+        <p class='alert'><%= alert %></p>
+      </div>
+    <% end %>
+
+    <%# This is the website layout framework  %>
+    <nav class="navbar is-info">
+      <div class="navbar-brand">    
+        <%= link_to root_path, class: "navbar-item" do %>
+          <h1 class='title is-5'>Barker</h1>
+        <% end %>
+        <div class='navbar-burger burger' data-target='navbarExample'>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <%# new_bark_path corresponds to the URI for new barks - see Rails Routes in console %>
+      <div id='navbarExample' class='navbar-menu'>
+        <div class='navbar-end'>
+          <div class='field is-grouped'>
+            <p class='control'>
+              <%= link_to 'New Bark', new_bark_path, class: 'button is-info is-inverted' %>
+            </p>
+            <p class='control'>Sign Up</p>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <%= yield %>
   </body>
