@@ -1,0 +1,2 @@
+class Bark < ApplicationRecord
+end

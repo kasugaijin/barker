@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @bark %>
+
+<div>
+  <%= link_to "Edit this bark", edit_bark_path(@bark) %> |
+  <%= link_to "Back to barks", barks_path %>
+
+  <%= button_to "Destroy this bark", @bark, method: :delete %>
+</div>
