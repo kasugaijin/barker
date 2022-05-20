@@ -1,15 +1,17 @@
 <%# sets left column %>
 <div class="column is-half">
-  <article class="media box">
-    <figure class="media-left">
-      <p class="image is-64x64">
-        <img src="https://previews.123rf.com/images/lar01joka/lar01joka1804/lar01joka180400019/100152648-cute-shiba-inu-dog-avatar.jpg">
-      </p>
-    </figure>
-    <div class="media-content">      
-      <%= render 'barks/form'%>
-    </div>
-  </article>
+  <% if user_signed_in? %>
+    <article class="media box">
+      <figure class="media-left">
+        <p class="image is-64x64">
+          <img src="https://previews.123rf.com/images/lar01joka/lar01joka1804/lar01joka180400019/100152648-cute-shiba-inu-dog-avatar.jpg">
+        </p>
+      </figure>
+      <div class="media-content">      
+        <%= render 'barks/form'%>
+      </div>
+    </article>
+  <% end %>
 
   <%# displays each bark %>
   <% @barks.each do | bark | %>
@@ -26,19 +28,21 @@
           <small><%= bark.user.username %></small><br />
           <p><%= bark.bark %></p>
         </div>
-        <nav class="level">
-          <div class="level-left is-mobile">
-            <%= link_to bark, class: 'level-item' do %>
-              <span class='icon'><i class='fa fa-link' aria-hidden='true'></i></span>
-            <% end %>
-            <%= link_to edit_bark_path(bark), class: 'level-item' do %>
-              <span class='icon'><i class='fa fa-pencil' aria-hidden='true'></i></span>
-            <% end %>
-            <%= link_to bark, method: :delete, data: { confirm: 'Are you sure you wanna delete me?'} do %>
-              <span class='icon'><i class='fa fa-trash-o' aria-hidden='true'></i></span>
-            <% end %>
-          </div>
-        </nav>
+        <% if user_signed_in? %>
+          <nav class="level">
+            <div class="level-left is-mobile">
+              <%= link_to bark, class: 'level-item' do %>
+                <span class='icon'><i class='fa fa-link' aria-hidden='true'></i></span>
+              <% end %>
+              <%= link_to edit_bark_path(bark), class: 'level-item' do %>
+                <span class='icon'><i class='fa fa-pencil' aria-hidden='true'></i></span>
+              <% end %>
+              <%= link_to bark, method: :delete, data: { confirm: 'Are you sure you wanna delete me?'} do %>
+                <span class='icon'><i class='fa fa-trash-o' aria-hidden='true'></i></span>
+              <% end %>
+            </div>
+          </nav>
+        <% end %>
       </div>
     </article>
   </div>
