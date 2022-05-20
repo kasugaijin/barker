@@ -14,6 +14,8 @@
  *= require_self
  */
 
+ $input-placeholder-color: rgb(113, 107, 107);
+
  @import 'bulma';
 
  .navbar-brand .title {
@@ -36,3 +38,8 @@
   margin-top: 1rem;
   margin-right: 0.5rem;
 }
+
+.cancel {
+  margin-top: 2rem;
+}
+

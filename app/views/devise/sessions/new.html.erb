@@ -4,14 +4,14 @@
       <div class="column is-4">
         <h2 class='title is-2'>Log in</h2>
 
+        <%# users require further rails config to allow for :username log in. See devise docs.  %>
+
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-           <%= f.error_notification %>
 
           <div class="field">
             <div class="control">
-              <%= f.input :username,
-                          required: true,
-                          autofocus: true,
+               <%= f.input :email, 
+                          required: false,
                           wrapper: false,
                           input_html: { class: 'input' }, 
                           label_html: { class:'label' } %>
