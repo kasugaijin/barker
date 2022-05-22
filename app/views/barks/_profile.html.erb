@@ -5,7 +5,7 @@
       <article class="media">
         <div class="media-left">
           <figure class="image is-64x64">
-            <img src="https://previews.123rf.com/images/lar01joka/lar01joka1804/lar01joka180400019/100152648-cute-shiba-inu-dog-avatar.jpg" alt="avatar">
+            <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
           </figure>
         </div>
         <div class="media-content">

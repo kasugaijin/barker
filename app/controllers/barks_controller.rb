@@ -40,7 +40,7 @@ class BarksController < ApplicationController
   def update
     respond_to do |format|
       if @bark.update(bark_params)
-        format.html { redirect_to bark_url(@bark), notice: "Bark was successfully updated." }
+        format.html { redirect_to root_path, notice: "Bark was successfully updated." }
         format.json { render :show, status: :ok, location: @bark }
       else
         format.html { render :edit, status: :unprocessable_entity }

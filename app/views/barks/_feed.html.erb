@@ -4,7 +4,7 @@
     <article class="media box">
       <figure class="media-left">
         <p class="image is-64x64">
-          <img src="https://previews.123rf.com/images/lar01joka/lar01joka1804/lar01joka180400019/100152648-cute-shiba-inu-dog-avatar.jpg">
+          <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
         </p>
       </figure>
       <div class="media-content">      
@@ -19,13 +19,13 @@
     <article class="media">
       <div class="media-left">
         <figure class="image is-64x64">
-        <img src="https://previews.123rf.com/images/lar01joka/lar01joka1804/lar01joka180400019/100152648-cute-shiba-inu-dog-avatar.jpg">
+        <%= gravatar_image_tag(bark.user.email, size: 64, alt: bark.user.name) %>
         </figure>
       </div>
       <div class="media-content">
         <div class="content">
           <strong><%= bark.user.name %></strong><br /> 
-          <small><%= bark.user.username %></small><br />
+          <small>@<%= bark.user.username %></small><br />
           <p><%= bark.bark %></p>
         </div>
         <% if user_signed_in? %>
